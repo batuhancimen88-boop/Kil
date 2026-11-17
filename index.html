@@ -2,58 +2,42 @@
 <html lang="tr">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#030712" />
     <title>Neon Runner</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="container">
-      <div id="menu" class="panel active">
+    <main class="container">
+      <section id="menu" class="panel active">
         <div class="title-wrap">
           <span class="badge">ARCADE</span>
           <h1>Neon Runner</h1>
         </div>
-
-        <p class="subtitle">
-          Yıldızları topla, düşmanlardan kaçın ve en yüksek skora ulaş!
-        </p>
-
+        <p class="subtitle">Yıldızları topla, düşmanlardan kaçın ve en yüksek skora ulaş!</p>
         <div class="stats-box">
-          <div>
-            <span>En Yüksek</span>
-            <strong id="menuHighScore">0</strong>
-          </div>
-          <div>
-            <span>Kontrol</span>
-            <strong>WASD / Oklar</strong>
-          </div>
+          <div><span>En Yüksek</span><strong id="menuHighScore">0</strong></div>
+          <div><span>Kontrol</span><strong class="desktop-help">WASD / Oklar</strong><strong class="mobile-help">Ekran tuşları</strong></div>
         </div>
+        <button id="startBtn" class="primary-btn" type="button">Başlat</button>
+      </section>
 
-        <button id="startBtn" class="primary-btn">Başlat</button>
-      </div>
-
-      <div id="gameWrap" class="game-wrap hidden">
+      <section id="gameWrap" class="game-wrap hidden">
         <div class="hud">
-          <div class="hud-item">
-            <span>Skor</span>
-            <strong id="score">0</strong>
-          </div>
-          <div class="hud-item">
-            <span>Süre</span>
-            <strong id="time">45</strong>
-          </div>
-          <div class="hud-item">
-            <span>Yüksek</span>
-            <strong id="highScore">0</strong>
-          </div>
+          <div class="hud-item"><span>Skor</span><strong id="score">0</strong></div>
+          <div class="hud-item"><span>Süre</span><strong id="time">45</strong></div>
+          <div class="hud-item"><span>Yüksek</span><strong id="highScore">0</strong></div>
         </div>
-
-        <canvas id="gameCanvas" width="900" height="520"></canvas>
-
-        <div id="statusBar" class="status-bar">Oyun Başladı!</div>
-      </div>
-    </div>
-
+        <canvas id="gameCanvas" width="900" height="520" aria-label="Neon Runner oyun alanı"></canvas>
+        <div id="statusBar" class="status-bar" aria-live="polite">Yıldızları topla, düşmanlardan kaç!</div>
+        <div class="mobile-controls" aria-label="Dokunmatik oyun kontrolleri">
+          <button class="control-btn up" data-key="arrowup" aria-label="Yukarı">▲</button>
+          <button class="control-btn left" data-key="arrowleft" aria-label="Sola">◀</button>
+          <button class="control-btn down" data-key="arrowdown" aria-label="Aşağı">▼</button>
+          <button class="control-btn right" data-key="arrowright" aria-label="Sağa">▶</button>
+        </div>
+      </section>
+    </main>
     <script src="game.js"></script>
   </body>
 </html>
