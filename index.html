@@ -3,17 +3,54 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kil - 2D Oyun</title>
+    <title>Neon Runner</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="game-shell">
-      <h1>Mini 2D Toplayıcı</h1>
-      <canvas id="gameCanvas" width="800" height="450"></canvas>
-      <div class="hud">
-        <span>Skor: <strong id="score">0</strong></span>
-        <span>Süre: <strong id="time">30</strong>s</span>
-        <span id="status">Oyna!</span>
+    <div class="container">
+      <div id="menu" class="panel active">
+        <div class="title-wrap">
+          <span class="badge">ARCADE</span>
+          <h1>Neon Runner</h1>
+        </div>
+
+        <p class="subtitle">
+          Yıldızları topla, düşmanlardan kaçın ve en yüksek skora ulaş!
+        </p>
+
+        <div class="stats-box">
+          <div>
+            <span>En Yüksek</span>
+            <strong id="menuHighScore">0</strong>
+          </div>
+          <div>
+            <span>Kontrol</span>
+            <strong>WASD / Oklar</strong>
+          </div>
+        </div>
+
+        <button id="startBtn" class="primary-btn">Başlat</button>
+      </div>
+
+      <div id="gameWrap" class="game-wrap hidden">
+        <div class="hud">
+          <div class="hud-item">
+            <span>Skor</span>
+            <strong id="score">0</strong>
+          </div>
+          <div class="hud-item">
+            <span>Süre</span>
+            <strong id="time">45</strong>
+          </div>
+          <div class="hud-item">
+            <span>Yüksek</span>
+            <strong id="highScore">0</strong>
+          </div>
+        </div>
+
+        <canvas id="gameCanvas" width="900" height="520"></canvas>
+
+        <div id="statusBar" class="status-bar">Oyun Başladı!</div>
       </div>
     </div>
 
